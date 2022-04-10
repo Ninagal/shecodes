@@ -28,18 +28,21 @@
                   class="form-control"
                   id="city-input"
                   autocomplete="off"
-                  style="font-size:30px;font-family: 'Lucida Sans';color: rgb(159, 175, 190);"
+                  style="font-size:30px;font-family: 'Lucida Sans';color: rgb(159, 175, 190); "
                 />
               </div>
-              <div class="col-3">
+              <div class="btn-group" >
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary w-100"
-                  style="font-size:30px;font-family: 'Lucida Sans';background: rgb(159, 175, 190);"
-                />
+                  class="boton"              
+                />             
+                <button class="boton" 
+                id="current-location-button">
+                  Current
+                </button>
               </div>
-            </div>
+            </div>      
           </form>
           <div class="overview">
             <h1 id="city"></h1>
@@ -61,7 +64,7 @@
             <div class="col-6">
               <ul>
                 <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>

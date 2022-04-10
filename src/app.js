@@ -115,3 +115,21 @@ function formatDate(timestamp) {
   form.addEventListener("submit", handleSubmit);
   
   search("Mexico City");
+
+  function searchLocation(position) {
+    let apiKey = "53a4f04c650dc574d79057109e4f7771";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayWeatherCondition);
+  }
+
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+  }
+
+  let currentLocationButton = document.querySelector(
+    "#current-location-button"
+  );
+  currentLocationButton.addEventListener("click", getCurrentLocation);
+  searchCity("Mexico");
